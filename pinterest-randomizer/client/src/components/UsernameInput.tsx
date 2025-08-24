@@ -45,20 +45,20 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-start justify-center px-4 bg-gray-50 pt-36">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold mb-4">
             MuseGrid
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-700">
             Find drawing inspiration from any Pinterest creator
           </p>
         </div>
 
         {/* Username Input Form */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
             Enter Pinterest Username
           </h2>
@@ -78,7 +78,7 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
                   value={username}
                   onChange={handleUsernameChange}
                   placeholder="username"
-                  className={`block w-full pl-8 pr-4 py-3 border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 ${
+                  className={`block w-full pl-8 pr-4 py-3 border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-[#E60023] focus:border-transparent transition-all duration-200 ${
                     error ? 'border-red-300 focus:ring-red-500' : 'border-gray-300'
                   }`}
                   disabled={isLoading}
@@ -95,11 +95,23 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
             <button
               type="submit"
               disabled={isLoading || !username.trim()}
-              className={`w-full py-3 px-4 rounded-lg font-medium text-white transition-all duration-200 ${
+              className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 border-2 ${
                 isLoading || !username.trim()
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transform hover:scale-105'
+                  ? 'bg-[#E60023] text-white cursor-not-allowed opacity-60 border-[#E60023]'
+                  : 'bg-[#E60023] text-white border-[#E60023]'
               }`}
+              onMouseEnter={(e) => {
+                if (!isLoading && username.trim()) {
+                  e.currentTarget.style.backgroundColor = 'white';
+                  e.currentTarget.style.color = '#E60023';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isLoading && username.trim()) {
+                  e.currentTarget.style.backgroundColor = '#E60023';
+                  e.currentTarget.style.color = 'white';
+                }
+              }}
             >
               {isLoading ? (
                 <div className="flex items-center justify-center">
@@ -114,10 +126,10 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
 
           {/* Help Text */}
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-600">
               Enter any public Pinterest username to explore their boards
             </p>
-            <p className="text-xs text-gray-400 mt-2">
+            <p className="text-xs text-gray-500 mt-2">
               No account connection required • Public boards only
             </p>
           </div>
@@ -125,11 +137,12 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
 
         {/* Back to Home Link */}
         <div className="text-center mt-6">
+        <span>← </span>
           <a 
             href="/" 
-            className="text-pink-600 hover:text-pink-700 text-sm font-medium hover:underline transition-colors"
+            className="text-sm font-medium hover:underline decoration-1 underline-offset-4 transition-colors"
           >
-            ← Back to Home
+            Back to Home
           </a>
         </div>
       </div>

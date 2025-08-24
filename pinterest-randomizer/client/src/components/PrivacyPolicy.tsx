@@ -105,12 +105,13 @@ const PrivacyPolicy: React.FC = () => {
           </div>
 
           <div className="text-center mt-10">
-            <a
-              href="/"
-              className="text-red-600 hover:text-red-700 underline decoration-2 underline-offset-4 hover:decoration-red-400 transition-all duration-300 text-lg"
-            >
-              ← Back to Home
-            </a>
+          <span>← </span>
+          <a 
+            href="/" 
+            className="text-sm font-medium hover:underline decoration-1 underline-offset-4 transition-colors"
+          >
+            Back to Home
+          </a>
           </div>
         </div>
       </div>
