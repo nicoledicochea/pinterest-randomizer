@@ -53,7 +53,7 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
             MuseGrid
           </h1>
           <p className="text-lg text-gray-700">
-            Find drawing inspiration from any Pinterest creator
+            Find inspiration from any Pinterest user
           </p>
         </div>
 

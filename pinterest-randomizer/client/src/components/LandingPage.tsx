@@ -10,7 +10,7 @@ const LandingPage: React.FC = () => {
             MuseGrid
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8" style={{ maxWidth: '30rem' }}>
-            Find drawing inspiration from any Pinterest user's boards without the endless scrolling
+            Find inspiration from any Pinterest user's boards without the endless scrolling
           </p>
         </div>
 
