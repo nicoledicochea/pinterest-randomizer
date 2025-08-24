@@ -15,8 +15,6 @@ interface BoardSelectionProps {
 }
 
 const BoardSelection: React.FC<BoardSelectionProps> = ({ onBoardSelect }) => {
-  const [selectedBoard, setSelectedBoard] = useState<MockBoard | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
   const { username } = useParams<{ username: string }>();
   const navigate = useNavigate();
 
@@ -73,49 +71,51 @@ const BoardSelection: React.FC<BoardSelectionProps> = ({ onBoardSelect }) => {
   ];
 
   const handleBoardClick = (board: MockBoard) => {
-    setSelectedBoard(board);
-  };
-
-  const handleContinue = () => {
-    if (!selectedBoard) return;
-    
-    setIsLoading(true);
-    // Simulate API call delay
-    setTimeout(() => {
-      setIsLoading(false);
-      onBoardSelect(selectedBoard);
-      // Navigate to image display page
-      navigate(`/image/${username}/${selectedBoard.id}`);
-    }, 1000);
+    // Navigate directly to image display page when board is clicked
+    navigate(`/image/${username}/${board.id}`);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
-      <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 py-8 pt-20">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            MuseGrid
+          <h1 className="text-3xl font-bold mb-2">
+            Public Boards
           </h1>
-          <p className="text-xl text-gray-600 mb-2">
-            Select a board from <span className="font-semibold text-pink-600">@{username}</span>
-          </p>
-          <p className="text-lg text-gray-500">
-            Choose a board to get random drawing inspiration
+          <div className="inline-block mb-8">
+            <span className="text-2xl font-semibold text-gray-700 text-[#E60023]">@{username}</span>
+          </div>
+          <p className="text-lg text-gray-600 mb-6">
+            <button
+              onClick={() => navigate(`/image/${username}/random`)}
+              className="bg-white text-[#E60023] border-2 border-[#E60023] px-6 py-2 rounded-lg font-medium transition-all duration-200 text-sm align-middle mx-2"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.color = '#E60023';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#E60023';
+                e.currentTarget.style.color = 'white';
+              }}
+            >
+              Randomize from All Boards
+            </button>
           </p>
         </div>
 
         {/* Board Grid */}
+        <div className="text-center mb-6">
+          <p className="text-lg text-gray-700">
+            Or, choose from a specific board:
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {mockBoards.map((board) => (
             <div
               key={board.id}
               onClick={() => handleBoardClick(board)}
-              className={`bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer transition-all duration-200 transform hover:scale-105 ${
-                selectedBoard?.id === board.id 
-                  ? 'ring-4 ring-pink-500 shadow-xl' 
-                  : 'hover:shadow-xl'
-              }`}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer transition-all duration-200 border-2 border-transparent hover:shadow-xl hover:border-gray-200"
             >
               {/* Board Cover Image */}
               <div className="relative h-48 overflow-hidden">
@@ -127,15 +127,6 @@ const BoardSelection: React.FC<BoardSelectionProps> = ({ onBoardSelect }) => {
                 <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium text-gray-700">
                   {board.pinCount} pins
                 </div>
-                {selectedBoard?.id === board.id && (
-                  <div className="absolute inset-0 bg-pink-500/20 flex items-center justify-center">
-                    <div className="bg-pink-500 text-white rounded-full p-2">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Board Info */}
@@ -159,57 +150,16 @@ const BoardSelection: React.FC<BoardSelectionProps> = ({ onBoardSelect }) => {
           ))}
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col gap-4 justify-center items-center">
-          {/* Main Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
-              onClick={() => navigate('/username')}
-              className="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
-            >
-              ← Back to Username
-            </button>
-            
-            <button
-              onClick={handleContinue}
-              disabled={!selectedBoard || isLoading}
-              className={`px-8 py-3 rounded-lg font-medium text-white transition-all duration-200 ${
-                !selectedBoard || isLoading
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transform hover:scale-105'
-              }`}
-            >
-              {isLoading ? (
-                <div className="flex items-center">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Loading...
-                </div>
-              ) : (
-                `Get Random Image from ${selectedBoard?.name || 'Selected Board'}`
-              )}
-            </button>
-          </div>
-          
-          {/* Random from Any Board Button */}
-          <div className="text-center">
-            <p className="text-gray-500 text-sm mb-3">Or skip board selection and get random inspiration:</p>
-            <button
-              onClick={() => navigate(`/image/${username}/random`)}
-              className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-indigo-700 transform hover:scale-105 transition-all duration-200"
-            >
-              🌟 Random from Any Board
-            </button>
-          </div>
+        {/* Try Another Username Button */}
+        <div className="text-center">
+          <span>← </span>
+          <a 
+            href="/username" 
+            className="text-sm font-medium hover:underline decoration-1 underline-offset-4 transition-colors"
+          >
+            Try Another Username
+          </a>
         </div>
-
-        {/* Selection Help */}
-        {!selectedBoard && (
-          <div className="text-center mt-6">
-            <p className="text-gray-500">
-              👆 Click on a board above to select it
-            </p>
-          </div>
-        )}
       </div>
     </div>
   );
