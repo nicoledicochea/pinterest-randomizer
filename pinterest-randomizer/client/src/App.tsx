@@ -11,8 +11,8 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navigation />
+    <div className="App">
+      <Navigation />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/username" element={<UsernameInput onUsernameSubmit={(username) => console.log('Username submitted:', username)} />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="/image/:username/random" element={<ImageDisplay onBackToBoards={() => console.log('Back to boards')} />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
-      </div>
+    </div>
     </Router>
   );
 }
