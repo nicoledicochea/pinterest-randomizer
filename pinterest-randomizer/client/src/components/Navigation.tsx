@@ -44,19 +44,7 @@ const Navigation: React.FC = () => {
             {/* Get Started Button */}
             <a
               href="/username"
-              className="text-red-600 px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-200 border-2 shadow-md hover:shadow-lg"
-              style={{ 
-                backgroundColor: 'white',
-                borderColor: '#E60023'
-              } as React.CSSProperties}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#E60023';
-                e.currentTarget.style.color = 'white';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'white';
-                e.currentTarget.style.color = '#E60023';
-              }}
+              className="text-[#E60023] hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-gray-100"
             >
               Get Started
             </a>
