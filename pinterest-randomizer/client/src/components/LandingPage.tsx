@@ -53,7 +53,7 @@ const LandingPage: React.FC = () => {
           {/* Get Started Button */}
         <button 
           onClick={() => window.location.href = '/username'}
-          className="inline-block bg-red-600 text-white rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-red-600 mx-auto mb-24"
+          className="inline-block bg-red-600 text-white rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-red-600 mx-auto mb-24 cursor-pointer"
           style={{ 
             '--tw-text-opacity': '1',
             '--tw-border-opacity': '1',

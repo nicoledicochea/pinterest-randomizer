@@ -95,10 +95,10 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
             <button
               type="submit"
               disabled={isLoading || !username.trim()}
-              className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 border-2 ${
+              className={`w-full py-3 px-4 rounded-lg font-medium border-2 transition-shadow duration-200 ${
                 isLoading || !username.trim()
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-200'
-                  : 'bg-[#E60023] text-white border-[#E60023]'
+                  ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-default'
+                  : 'bg-[#E60023] text-white border-[#E60023] cursor-pointer'
               }`}
               onMouseEnter={(e) => {
                 if (!isLoading && username.trim()) {
@@ -113,8 +113,8 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
               }}
             >
               {isLoading ? (
-                <div className="flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                <div className="flex items-center justify-center text-gray-400">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-gray-400 mr-2"></div>
                   Finding Boards...
                 </div>
               ) : (

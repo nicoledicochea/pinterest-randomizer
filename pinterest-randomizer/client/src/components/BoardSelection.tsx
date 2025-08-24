@@ -167,7 +167,7 @@ const BoardSelection: React.FC<BoardSelectionProps> = ({ onBoardSelect }) => {
           <p className="text-lg text-gray-600 mb-6">
             <button
               onClick={() => navigate(`/image/${username}/random`)}
-              className="bg-[#E60023] text-white border-2 border-[#E60023] px-6 py-2 rounded-lg font-medium transition-all duration-200 text-sm align-middle mx-2"
+              className="bg-[#E60023] text-white border-2 border-[#E60023] px-6 py-2 rounded-lg font-medium transition-all duration-200 text-sm align-middle mx-2 cursor-pointer"
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'white';
                 e.currentTarget.style.color = '#E60023';
