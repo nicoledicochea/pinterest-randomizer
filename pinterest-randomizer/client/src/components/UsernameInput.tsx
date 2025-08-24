@@ -97,20 +97,19 @@ const UsernameInput: React.FC<UsernameInputProps> = ({ onUsernameSubmit }) => {
               disabled={isLoading || !username.trim()}
               className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 border-2 ${
                 isLoading || !username.trim()
-                  ? 'bg-[#E60023] text-white cursor-not-allowed opacity-60 border-[#E60023]'
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed border-gray-200'
                   : 'bg-[#E60023] text-white border-[#E60023]'
               }`}
               onMouseEnter={(e) => {
                 if (!isLoading && username.trim()) {
                   e.currentTarget.style.backgroundColor = 'white';
                   e.currentTarget.style.color = '#E60023';
-                }
+                } 
               }}
               onMouseLeave={(e) => {
-                if (!isLoading && username.trim()) {
-                  e.currentTarget.style.backgroundColor = '#E60023';
-                  e.currentTarget.style.color = 'white';
-                }
+                // Always clear inline styles to let CSS classes take over
+                e.currentTarget.style.backgroundColor = '';
+                e.currentTarget.style.color = '';
               }}
             >
               {isLoading ? (
