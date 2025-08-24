@@ -14,7 +14,7 @@ interface BoardSelectionProps {
   onBoardSelect: (board: MockBoard) => void;
 }
 
-const BoardSelection: React.FC<BoardSelectionProps> = ({ onBoardSelect }) => {
+const BoardSelection: React.FC<BoardSelectionProps> = ({ }) => {
   const { username } = useParams<{ username: string }>();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');

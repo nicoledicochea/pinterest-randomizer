@@ -15,11 +15,11 @@ interface ImageDisplayProps {
   onBackToBoards: () => void;
 }
 
-const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
+const ImageDisplay: React.FC<ImageDisplayProps> = () => {
   const [currentImage, setCurrentImage] = useState<MockPin | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [imageHistory, setImageHistory] = useState<MockPin[]>([]);
-  const { username, boardId } = useParams<{ username: string; boardId: string }>();
+  const { username } = useParams<{ username: string; boardId: string }>();
   const navigate = useNavigate();
 
   // Mock pins data - we'll replace this with real API data later
