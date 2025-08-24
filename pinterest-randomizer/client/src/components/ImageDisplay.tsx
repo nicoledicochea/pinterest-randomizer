@@ -28,90 +28,90 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
       id: '1',
       title: 'Ethereal Forest Concept Art',
       description: 'Beautiful fantasy forest with mystical lighting and atmospheric perspective. Perfect for landscape practice.',
-      imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=800&fit=crop',
+             imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&fit=max',
       originalUrl: 'https://pinterest.com/pin/example1',
       boardName: 'Drawing Inspiration',
       creator: username || 'demo'
     },
     {
       id: '2',
-      title: 'Character Portrait Study',
-      description: 'Detailed character design with interesting lighting and expression. Great for portrait practice.',
-      imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=800&fit=crop',
-      originalUrl: 'https://pinterest.com/pin/example2',
+             title: 'Character Portrait Study',
+       description: 'Detailed character design with interesting lighting and expression. Great for portrait practice.',
+       imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&fit=max',
+       originalUrl: 'https://pinterest.com/pin/example2',
       boardName: 'Character Design',
       creator: username || 'demo'
     },
     {
       id: '3',
-      title: 'Mountain Landscape Reference',
-      description: 'Stunning mountain vista with dramatic clouds and lighting. Perfect for environment art.',
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop',
-      originalUrl: 'https://pinterest.com/pin/example3',
+             title: 'Mountain Landscape Reference',
+       description: 'Stunning mountain vista with dramatic clouds and lighting. Perfect for environment art.',
+       imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=max',
+       originalUrl: 'https://pinterest.com/pin/example3',
       boardName: 'Landscape Ideas',
       creator: username || 'demo'
     },
          {
        id: '4',
-       title: 'Color Harmony Study',
-       description: 'Beautiful color palette inspiration with warm and cool tones. Great for color theory practice.',
-       imageUrl: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=600&h=800&fit=crop',
-       originalUrl: 'https://pinterest.com/pin/example4',
+               title: 'Color Harmony Study',
+        description: 'Beautiful color palette inspiration with warm and cool tones. Great for color theory practice.',
+        imageUrl: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=800&fit=max',
+        originalUrl: 'https://pinterest.com/pin/example4',
        boardName: 'Color Palettes',
        creator: username || 'demo'
      },
      {
-       id: '4b',
-       title: '',
-       description: '',
-       imageUrl: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=600&h=800&fit=crop',
-       originalUrl: 'https://pinterest.com/pin/example4b',
+               id: '4b',
+        title: '',
+        description: '',
+        imageUrl: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=800&fit=max',
+        originalUrl: 'https://pinterest.com/pin/example4b',
        boardName: 'Color Palettes',
        creator: username || 'demo'
      },
     {
       id: '5',
-      title: 'Figure Drawing Reference',
-      description: 'Dynamic pose with interesting gesture and anatomy. Perfect for figure drawing practice.',
-      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop',
-      originalUrl: 'https://pinterest.com/pin/example5',
+             title: 'Figure Drawing Reference',
+       description: 'Dynamic pose with interesting gesture and anatomy. Perfect for figure drawing practice.',
+       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&fit=max',
+       originalUrl: 'https://pinterest.com/pin/example5',
       boardName: 'Anatomy Reference',
       creator: username || 'demo'
     },
          {
        id: '6',
-       title: 'Fantasy Architecture',
-       description: 'Magical castle design with intricate details and atmospheric perspective.',
-       imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=800&fit=crop',
-       originalUrl: 'https://pinterest.com/pin/example6',
+               title: 'Fantasy Architecture',
+        description: 'Magical castle design with intricate details and atmospheric perspective.',
+        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=max',
+        originalUrl: 'https://pinterest.com/pin/example6',
        boardName: 'Fantasy Art',
        creator: username || 'demo'
      },
      {
-       id: '6b',
-       title: 'Abstract Composition',
-       description: '',
-       imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=800&fit=crop',
-       originalUrl: 'https://pinterest.com/pin/example6b',
+               id: '6b',
+        title: 'Abstract Composition',
+        description: '',
+        imageUrl: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&fit=max',
+        originalUrl: 'https://pinterest.com/pin/example6b',
        boardName: 'Fantasy Art',
        creator: username || 'demo'
      },
     // Additional pins from other boards for variety
     {
       id: '7',
-      title: 'Abstract Art Inspiration',
-      description: 'Bold abstract composition with vibrant colors and dynamic shapes. Great for modern art practice.',
-      imageUrl: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=800&fit=crop',
-      originalUrl: 'https://pinterest.com/pin/example7',
+             title: 'Abstract Art Inspiration',
+       description: 'Bold abstract composition with vibrant colors and dynamic shapes. Great for modern art practice.',
+       imageUrl: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&fit=max',
+       originalUrl: 'https://pinterest.com/pin/example7',
       boardName: 'Modern Art',
       creator: username || 'demo'
     },
     {
       id: '8',
-      title: 'Watercolor Techniques',
-      description: 'Delicate watercolor painting with beautiful color blending and texture effects.',
-      imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=800&fit=crop',
-      originalUrl: 'https://pinterest.com/pin/example8',
+             title: 'Watercolor Techniques',
+       description: 'Delicate watercolor painting with beautiful color blending and texture effects.',
+       imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&fit=max',
+       originalUrl: 'https://pinterest.com/pin/example8',
       boardName: 'Watercolor Art',
       creator: username || 'demo'
     }
@@ -213,11 +213,11 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
             <>
               {/* Image Display */}
               <div className="relative">
-                <img
-                  src={currentImage.imageUrl}
-                  alt={currentImage.title}
-                  className="w-full h-auto max-h-96 object-contain bg-gray-100"
-                />
+                                 <img
+                   src={currentImage.imageUrl}
+                   alt={currentImage.title || 'Inspiration image'}
+                   className="w-full h-auto object-contain bg-gray-100"
+                 />
                 <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-medium shadow-lg ml-2" style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.3)',
                   backdropFilter: 'blur(4px)'
