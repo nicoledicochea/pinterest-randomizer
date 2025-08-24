@@ -2,11 +2,11 @@ import React from 'react';
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
+    <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-4 py-24">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-24">
+          <h1 className="text-5xl font-bold mb-4">
             MuseGrid
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8" style={{ maxWidth: '30rem' }}>
@@ -22,24 +22,24 @@ const LandingPage: React.FC = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔍</span>
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FEF2F2' }}>
+                <div className="w-8 h-8 bg-red-600 rounded-full"></div>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">1. Enter Username</h3>
               <p className="text-gray-600">Search any Pinterest username to explore their boards</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📋</span>
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FEE2E2' }}>
+                <div className="w-8 h-8 bg-red-600 rounded-lg"></div>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">2. Choose a Board</h3>
               <p className="text-gray-600">Browse and select from their available boards</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🎲</span>
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FEF2F2' }}>
+                <div className="w-8 h-8 bg-red-600 transform rotate-45 rounded-lg"></div>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">3. Get Random Inspiration</h3>
               <p className="text-gray-600">We'll pick a random image for you to draw from</p>
@@ -47,17 +47,29 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Get Started Section */}
-        <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 text-center">
+        {/* Get Started Section  */}
+        <div className="p-8 text-center">
           <h2 className="text-3xl font-bold mb-8 text-gray-900 mt-8">Ready to Get Inspired?</h2>
-          <div className="mb-6 pt-2">
-            <button 
-              onClick={() => window.location.href = '/username'}
-              className="inline-block bg-white px-16 py-4  font-bold text-lg border-1 border-gray-900 shadow-xl hover:bg-gray-50 hover:border-gray-700 transform hover:scale-105 transition-all duration-200 cursor-pointer rounded-lg"
-            >
-              Get Started
-            </button>
-          </div>
+          {/* Get Started Button */}
+        <button 
+          onClick={() => window.location.href = '/username'}
+          className="inline-block bg-red-600 text-white rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-red-600 mx-auto mb-24"
+          style={{ 
+            '--tw-text-opacity': '1',
+            '--tw-border-opacity': '1',
+            padding: '16px 48px'
+          } as React.CSSProperties}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'white';
+            e.currentTarget.style.color = '#E60023';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = '#E60023';
+            e.currentTarget.style.color = 'white';
+          }}
+        >
+          Get Started
+        </button>
         </div>
 
         {/* Footer */}
