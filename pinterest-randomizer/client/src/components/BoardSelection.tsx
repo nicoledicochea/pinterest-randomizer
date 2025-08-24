@@ -239,28 +239,28 @@ const BoardSelection: React.FC<BoardSelectionProps> = ({ onBoardSelect }) => {
                       alt={board.name}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium text-gray-700">
+                    <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full text-xs font-semibold text-white shadow-lg ml-2" style={{ 
+                      backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                      backdropFilter: 'blur(4px)'
+                    }}>
                       {board.pinCount} pins
                     </div>
                   </div>
 
-                  {/* Board Info */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {board.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-3">
-                      {board.description}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
-                        {board.privacy}
-                      </span>
-                      <span className="text-sm text-gray-500">
-                        {board.pinCount} pins
-                      </span>
-                    </div>
-                  </div>
+                                     {/* Board Info */}
+                   <div className="p-4">
+                     <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                       {board.name}
+                     </h3>
+                     <div className="flex items-center justify-between">
+                       <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                         {board.privacy}
+                       </span>
+                       <span className="text-sm text-gray-500">
+                         {board.pinCount} pins
+                       </span>
+                     </div>
+                   </div>
                 </div>
               ))}
             </div>
