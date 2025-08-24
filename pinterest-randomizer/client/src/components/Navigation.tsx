@@ -19,6 +19,12 @@ const Navigation: React.FC = () => {
               Home
             </a>
             <a 
+              href="/username" 
+              className="text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Get Started
+            </a>
+            <a 
               href="/privacy" 
               className="text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium"
             >

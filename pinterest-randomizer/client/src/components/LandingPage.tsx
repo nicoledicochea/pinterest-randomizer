@@ -47,13 +47,19 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Coming Soon Section */}
+        {/* Get Started Section */}
         <div className="bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl p-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Coming Soon!</h2>
+          <h2 className="text-3xl font-bold mb-4">Ready to Get Inspired?</h2>
           <p className="text-xl mb-6">
-            We're working on connecting to Pinterest to bring you this functionality.
+            Enter any Pinterest username to start exploring their boards for drawing inspiration.
           </p>
-          <div className="bg-white/20 rounded-lg p-4 inline-block">
+          <a 
+            href="/username" 
+            className="inline-block bg-white text-pink-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+          >
+            Get Started
+          </a>
+          <div className="bg-white/20 rounded-lg p-4 inline-block mt-4">
             <p className="text-sm">
               🔒 Your privacy is important to us. We never store your personal data.
             </p>
