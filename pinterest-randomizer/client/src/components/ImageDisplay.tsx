@@ -169,18 +169,15 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 py-8 pt-20">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            MuseGrid
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+            {currentImage?.boardName || 'Random Inspiration'}
           </h1>
-          <p className="text-xl text-gray-600 mb-2">
-            Drawing inspiration from <span className="font-semibold text-pink-600">@{username}</span>
-          </p>
-          <p className="text-lg text-gray-500">
-            {currentImage?.boardName && `From "${currentImage.boardName}" board`}
+          <p className="text-xl text-gray-600 mb-4">
+            from <span className="font-semibold text-[#E60023]">@{username}</span>
           </p>
         </div>
 
@@ -190,7 +187,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
             // Loading State
             <div className="flex items-center justify-center h-96">
               <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto mb-4"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#E60023] mx-auto mb-4"></div>
                 <p className="text-gray-600 text-lg">Finding your inspiration...</p>
               </div>
             </div>
@@ -203,7 +200,10 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
                   alt={currentImage.title}
                   className="w-full h-auto max-h-96 object-contain bg-gray-100"
                 />
-                <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-medium shadow-lg ml-2" style={{ 
+                      backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                      backdropFilter: 'blur(4px)'
+                    }}>
                   🎨 Inspiration #{imageHistory.length}
                 </div>
               </div>
@@ -218,10 +218,10 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
                     📌 {currentImage.boardName}
                   </span>
-                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
                     👤 @{currentImage.creator}
                   </span>
                 </div>
@@ -233,7 +233,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
                     <button
                       onClick={getRandomImageFromSameBoard}
                       disabled={isLoading}
-                      className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:from-pink-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex-1 bg-[#E60023] text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-[#E60023] border-2 border-[#E60023] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? 'Loading...' : '🎲 Same Board'}
                     </button>
@@ -241,7 +241,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
                     <button
                       onClick={getRandomImageFromAnyBoard}
                       disabled={isLoading}
-                      className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-indigo-700 transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex-1 bg-white text-[#E60023] border-2 border-[#E60023] px-6 py-3 rounded-lg font-medium hover:bg-[#E60023] hover:text-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoading ? 'Loading...' : '🌟 Any Board'}
                     </button>
@@ -250,7 +250,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
                   {/* Pinterest Link Button */}
                   <button
                     onClick={handleViewOnPinterest}
-                    className="w-full bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-all duration-200 flex items-center justify-center"
+                    className="w-full bg-[#E60023] text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-[#E60023] border-2 border-[#E60023] transition-all duration-200 flex items-center justify-center"
                   >
                     📌 View on Pinterest
                   </button>
@@ -264,7 +264,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
                 <p className="text-gray-600 text-lg mb-4">No inspiration found</p>
                 <button
                   onClick={getRandomImageFromAnyBoard}
-                  className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors"
+                  className="bg-[#E60023] text-white px-6 py-2 rounded-lg hover:bg-white hover:text-[#E60023] border-2 border-[#E60023] transition-all duration-200"
                 >
                   Try Again
                 </button>
@@ -274,20 +274,14 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
         </div>
 
         {/* Navigation */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button
+        <div className="text-center">
+          <span>← </span>
+          <span 
             onClick={handleBackToBoards}
-            className="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
+            className="text-sm font-medium hover:underline decoration-1 underline-offset-4 transition-colors cursor-pointer"
           >
-            ← Back to Boards
-          </button>
-          
-          <button
-            onClick={() => navigate('/username')}
-            className="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
-          >
-            🔄 Try Different User
-          </button>
+            Back to Boards
+          </span>
         </div>
 
         {/* History Counter */}

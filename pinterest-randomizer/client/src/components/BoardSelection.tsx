@@ -158,16 +158,16 @@ const BoardSelection: React.FC<BoardSelectionProps> = ({ onBoardSelect }) => {
       <div className="max-w-6xl mx-auto px-4 py-8 pt-20">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-2">
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">
             Public Boards
           </h1>
-          <div className="inline-block mb-8">
-            <span className="text-2xl font-semibold text-gray-700 text-[#E60023]">@{username}</span>
-          </div>
+          <p className="text-xl text-gray-600 mb-6">
+            from <span className="font-semibold text-[#E60023]">@{username}</span>
+          </p>
           <p className="text-lg text-gray-600 mb-6">
             <button
               onClick={() => navigate(`/image/${username}/random`)}
-              className="bg-white text-[#E60023] border-2 border-[#E60023] px-6 py-2 rounded-lg font-medium transition-all duration-200 text-sm align-middle mx-2"
+              className="bg-[#E60023] text-white border-2 border-[#E60023] px-6 py-2 rounded-lg font-medium transition-all duration-200 text-sm align-middle mx-2"
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'white';
                 e.currentTarget.style.color = '#E60023';
