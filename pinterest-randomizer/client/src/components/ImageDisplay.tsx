@@ -51,15 +51,24 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
       boardName: 'Landscape Ideas',
       creator: username || 'demo'
     },
-    {
-      id: '4',
-      title: 'Color Harmony Study',
-      description: 'Beautiful color palette inspiration with warm and cool tones. Great for color theory practice.',
-      imageUrl: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=600&h=800&fit=crop',
-      originalUrl: 'https://pinterest.com/pin/example4',
-      boardName: 'Color Palettes',
-      creator: username || 'demo'
-    },
+         {
+       id: '4',
+       title: 'Color Harmony Study',
+       description: 'Beautiful color palette inspiration with warm and cool tones. Great for color theory practice.',
+       imageUrl: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=600&h=800&fit=crop',
+       originalUrl: 'https://pinterest.com/pin/example4',
+       boardName: 'Color Palettes',
+       creator: username || 'demo'
+     },
+     {
+       id: '4b',
+       title: '',
+       description: '',
+       imageUrl: 'https://images.unsplash.com/photo-1557683316-973673baf926?w=600&h=800&fit=crop',
+       originalUrl: 'https://pinterest.com/pin/example4b',
+       boardName: 'Color Palettes',
+       creator: username || 'demo'
+     },
     {
       id: '5',
       title: 'Figure Drawing Reference',
@@ -69,15 +78,24 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
       boardName: 'Anatomy Reference',
       creator: username || 'demo'
     },
-    {
-      id: '6',
-      title: 'Fantasy Architecture',
-      description: 'Magical castle design with intricate details and atmospheric perspective.',
-      imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=800&fit=crop',
-      originalUrl: 'https://pinterest.com/pin/example6',
-      boardName: 'Fantasy Art',
-      creator: username || 'demo'
-    },
+         {
+       id: '6',
+       title: 'Fantasy Architecture',
+       description: 'Magical castle design with intricate details and atmospheric perspective.',
+       imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=800&fit=crop',
+       originalUrl: 'https://pinterest.com/pin/example6',
+       boardName: 'Fantasy Art',
+       creator: username || 'demo'
+     },
+     {
+       id: '6b',
+       title: 'Abstract Composition',
+       description: '',
+       imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=800&fit=crop',
+       originalUrl: 'https://pinterest.com/pin/example6b',
+       boardName: 'Fantasy Art',
+       creator: username || 'demo'
+     },
     // Additional pins from other boards for variety
     {
       id: '7',
@@ -208,16 +226,20 @@ const ImageDisplay: React.FC<ImageDisplayProps> = ({ onBackToBoards }) => {
                 </div>
               </div>
 
-              {/* Image Details */}
-              <div className="p-6">
-                                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                   {currentImage.title}
-                 </h2>
-                 <p className="text-gray-700 mb-6 leading-relaxed">
-                   {currentImage.description}
-                 </p>
+                             {/* Image Details */}
+               <div className="p-6">
+                 {currentImage.title && (
+                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                     {currentImage.title}
+                   </h2>
+                 )}
+                 {currentImage.description && (
+                   <p className="text-gray-700 mb-6 leading-relaxed">
+                     {currentImage.description}
+                   </p>
+                 )}
 
-                                 <div className="flex flex-wrap gap-4 mb-8 justify-center">
+                                 <div className="flex flex-wrap gap-4 mb-8 justify-center mt-2">
                   <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
