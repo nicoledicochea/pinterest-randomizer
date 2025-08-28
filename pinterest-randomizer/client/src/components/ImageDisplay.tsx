@@ -131,8 +131,9 @@ const ImageDisplay: React.FC<ImageDisplayProps> = () => {
 
       // If no more pins in same board, show message or get from any board
       if (sameBoardPins.length === 0) {
-        // Could show a message: "No more pins in this board, trying any board..."
-        getRandomImageFromAnyBoard();
+        // Show message that no more pins in this board
+        alert("No more pins available in this board. Try selecting from any board instead.");
+        setIsLoading(false);
         return;
       }
 
@@ -286,7 +287,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = () => {
                         e.currentTarget.style.color = 'white';
                       }}
                     >
-                      {isLoading ? 'Loading...' : 'Same Board'}
+                      {isLoading ? 'Loading...' : 'New from Same Board'}
                     </button>
 
                     <button
@@ -302,7 +303,7 @@ const ImageDisplay: React.FC<ImageDisplayProps> = () => {
                         e.currentTarget.style.color = 'white';
                       }}
                     >
-                      {isLoading ? 'Loading...' : 'Any Board'}
+                      {isLoading ? 'Loading...' : 'New from Any Board'}
                     </button>
                   </div>
                 </div>

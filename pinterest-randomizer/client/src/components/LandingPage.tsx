@@ -42,7 +42,7 @@ const LandingPage: React.FC = () => {
                 <div className="w-8 h-8 bg-red-600 transform rotate-45 rounded-lg"></div>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">3. Get Random Inspiration</h3>
-              <p className="text-gray-600">We'll pick a random image for you to draw from</p>
+              <p className="text-gray-600">Skip the endless scrolling - get a random image to jumpstart your creativity</p>
             </div>
           </div>
         </div>

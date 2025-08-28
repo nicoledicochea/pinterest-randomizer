@@ -10,7 +10,7 @@ const PrivacyPolicy: React.FC = () => {
               Privacy Policy
             </h1>
             <p className="text-gray-600 text-lg">
-              Last updated: August 23, 2025
+              Last updated: August 27, 2025
             </p>
           </div>
 
@@ -33,7 +33,48 @@ const PrivacyPolicy: React.FC = () => {
               How We Work
             </h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              MuseGrid is a tool that helps you find drawing inspiration by randomly selecting images from public Pinterest boards. When you enter a Pinterest username, we only access publicly available information that anyone can see on Pinterest.
+              MuseGrid is a creative inspiration tool that helps artists discover drawing references from Pinterest boards. 
+              Users intentionally choose which Pinterest creator and board to explore, and our app helps them discover 
+              new content from their chosen source. When you enter a Pinterest username, we only access publicly 
+              available information that anyone can see on Pinterest.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Pinterest Compliance
+            </h2>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              <strong>User-Controlled Content Discovery:</strong> MuseGrid complies with Pinterest's developer guidelines 
+              by ensuring users make intentional choices about content sources. Users choose which creator to explore, 
+              which board to focus on, and when to discover new content - maintaining authentic engagement with Pinterest.
+            </p>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              <strong>Content Attribution:</strong> All Pinterest content is properly attributed with links back 
+              to the original source on Pinterest. We do not modify, filter, or create derivative content from 
+              Pinterest pins, and users can always click through to view the original content on Pinterest.
+            </p>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              <strong>No Automated Actions:</strong> Our app does not perform any automated actions on Pinterest 
+              on behalf of users. Every content discovery action is initiated by the user clicking a button, 
+              ensuring compliance with Pinterest's guidelines about user agency and authentic engagement.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Pinterest Developer Guidelines Compliance
+            </h2>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              <strong>Authentic User Engagement:</strong> We follow Pinterest's requirement that "end users are responsible 
+              for the actions that they take on Pinterest, and we want those actions to be genuine." Our app never 
+              takes actions on behalf of users - users make every decision about what content to explore.
+            </p>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              <strong>No Automation Concerns:</strong> Pinterest prohibits "offering features that enable end users to 
+              automatically initiate actions without specifically considering each action." Our app requires users to 
+              click buttons for each new content discovery, ensuring each action is intentional and considered.
+            </p>
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              <strong>Content Discovery, Not Automation:</strong> While our app helps users discover new content, 
+              this is achieved through user-initiated browsing choices, not automated content selection. Users 
+              control exactly which creator and board they want to explore, maintaining the authentic Pinterest experience.
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
